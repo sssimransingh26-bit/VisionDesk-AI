@@ -1,0 +1,11 @@
+venv/
+runs/
+output/
+cf.exe
+cf.cpp
+yolov8n.pt
+__pycache__/
+*.pyc
+.env
+chroma_db/
+logs/
