@@ -170,6 +170,97 @@ The retrieval system was evaluated using 10 safety-related questions and achieve
 
 ---
 
-### Milestone 3 — LLM + Agentic RAG
+Milestone 3 — LLM + Agentic RAG
 
-Implemented a LangGraph workflow
+Implemented a LangGraph workflow:
+
+Question
+   ↓
+Retrieve relevant documents
+   ↓
+Combine document + vision context
+   ↓
+Gemini
+   ↓
+Safety Answer
+
+The agent is designed to answer using retrieved safety documents and can incorporate PPE detection findings.
+---
+Milestone 4 — Dashboard & Business Intelligence
+
+Implemented:
+
+Scan history
+Compliance KPIs
+Violation analytics
+User feedback tracking
+PDF report generation
+CSV export
+Streamlit dashboard
+Integrated image/video detection
+Document upload and search
+AI safety assistant
+---
+⚙️ Installation
+1. Clone the repository
+git clone https://github.com/sssimransingh26-bit/VisionDesk-AI.git
+cd VisionDesk-AI
+2. Create a virtual environment
+python -m venv venv
+
+Activate it on Windows:
+
+venv\Scripts\activate
+3. Install dependencies
+pip install -r requirements.txt
+4. Configure Gemini
+
+Create a .env file:
+
+GEMINI_API_KEY=your_api_key_here
+GEMINI_MODEL=gemini-3.8-flash
+
+Do not commit your .env file to GitHub.
+
+5. Run the application
+streamlit run app.py
+---
+📊 Retrieval Evaluation
+
+Run:
+
+python evaluate.py
+
+The evaluation tests the semantic retrieval system against predefined workplace safety questions.
+
+Current project evaluation:
+
+Retrieval accuracy: 100%
+Target: 85%
+---
+🔐 Security
+
+Sensitive credentials are excluded using .gitignore.
+
+The following are intentionally not committed:
+
+.env
+venv/
+chroma_db/
+logs/
+runs/
+output/
+__pycache__/
+---
+🎯 Project Goal
+
+VisionDesk AI aims to connect visual workplace observations with organizational safety knowledge.
+
+Instead of treating computer vision, documents, and AI as separate systems, the platform combines them into one workflow:
+
+See → Retrieve → Reason → Analyze → Report
+---
+👩‍💻 Author
+
+Simran Singh
+
