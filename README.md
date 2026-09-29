@@ -8,9 +8,9 @@ The system can analyze construction-site images/videos, retrieve relevant safety
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
-### 👷 PPE Detection
+### PPE Detection
 
 * Detects PPE equipment using **YOLOv8**
 * Supports image and video analysis
@@ -18,7 +18,7 @@ The system can analyze construction-site images/videos, retrieve relevant safety
 * Displays confidence scores and detection results
 * Generates a compliance summary
 
-### 📄 Document Intelligence
+### Document Intelligence
 
 * Supports PDF, TXT, and DOCX documents
 * Extracts and cleans document text
@@ -26,7 +26,7 @@ The system can analyze construction-site images/videos, retrieve relevant safety
 * Stores document embeddings in **ChromaDB**
 * Performs semantic search over safety manuals and reports
 
-### 🤖 AI Safety Assistant
+### AI Safety Assistant
 
 * Uses **LangGraph** to orchestrate the AI workflow
 * Retrieves relevant safety documents before answering
@@ -34,7 +34,7 @@ The system can analyze construction-site images/videos, retrieve relevant safety
 * Can combine document knowledge with PPE detection results
 * Provides document/source references in responses
 
-### 📊 Safety Dashboard
+### Safety Dashboard
 
 * Tracks analyzed images and videos
 * Displays compliance rate
@@ -43,7 +43,7 @@ The system can analyze construction-site images/videos, retrieve relevant safety
 * Shows violation trends over time
 * Collects user feedback on AI responses
 
-### 📋 Automated Reports
+### Automated Reports
 
 * Generates safety compliance summaries
 * Creates downloadable PDF reports
@@ -52,21 +52,21 @@ The system can analyze construction-site images/videos, retrieve relevant safety
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```text
                     ┌──────────────────────┐
                     │    Streamlit UI      │
-                    │      app.py          │
+                    │       app.py         │
                     └──────────┬───────────┘
                                │
               ┌────────────────┼────────────────┐
               │                │                │
               ▼                ▼                ▼
        ┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-       │ YOLOv8     │  │ Document    │  │ LangGraph   │
-       │ PPE        │  │ Processing  │  │ AI Agent    │
-       │ Detection  │  │ + ChromaDB  │  │             │
+       │   YOLOv8    │  │  Document   │  │  LangGraph  │
+       │     PPE     │  │ Processing  │  │  AI Agent   │
+       │  Detection  │  │ + ChromaDB  │  │             │
        └──────┬──────┘  └──────┬──────┘  └──────┬──────┘
               │                │                │
               │                ▼                ▼
@@ -83,7 +83,7 @@ The system can analyze construction-site images/videos, retrieve relevant safety
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component            | Technology            |
 | -------------------- | --------------------- |
@@ -102,7 +102,7 @@ The system can analyze construction-site images/videos, retrieve relevant safety
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 VisionDesk-AI/
@@ -134,7 +134,7 @@ VisionDesk-AI/
 
 ---
 
-## 🔄 Project Milestones
+## Project Milestones
 
 ### Milestone 1 — Computer Vision
 
@@ -142,11 +142,9 @@ Implemented PPE detection using a trained YOLOv8 model.
 
 The system detects PPE-related classes and identifies violations based on classes beginning with `no_`.
 
----
-
 ### Milestone 2 — Document Intelligence & RAG
 
-Implemented:
+Implemented the following pipeline:
 
 ```text
 Document
@@ -168,12 +166,11 @@ The retrieval system was evaluated using 10 safety-related questions and achieve
 
 **100% retrieval accuracy** on the project evaluation set.
 
----
-
-Milestone 3 — LLM + Agentic RAG
+### Milestone 3 — LLM + Agentic RAG
 
 Implemented a LangGraph workflow:
 
+```text
 Question
    ↓
 Retrieve relevant documents
@@ -183,67 +180,99 @@ Combine document + vision context
 Gemini
    ↓
 Safety Answer
+```
 
 The agent is designed to answer using retrieved safety documents and can incorporate PPE detection findings.
----
-Milestone 4 — Dashboard & Business Intelligence
+
+### Milestone 4 — Dashboard & Business Intelligence
 
 Implemented:
 
-Scan history
-Compliance KPIs
-Violation analytics
-User feedback tracking
-PDF report generation
-CSV export
-Streamlit dashboard
-Integrated image/video detection
-Document upload and search
-AI safety assistant
+* Scan history
+* Compliance KPIs
+* Violation analytics
+* User feedback tracking
+* PDF report generation
+* CSV export
+* Streamlit dashboard
+* Integrated image/video detection
+* Document upload and search
+* AI safety assistant
+
 ---
-⚙️ Installation
-1. Clone the repository
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/sssimransingh26-bit/VisionDesk-AI.git
 cd VisionDesk-AI
-2. Create a virtual environment
+```
+
+### 2. Create a virtual environment
+
+```bash
 python -m venv venv
+```
 
 Activate it on Windows:
 
+```bash
 venv\Scripts\activate
-3. Install dependencies
+```
+
+### 3. Install dependencies
+
+```bash
 pip install -r requirements.txt
-4. Configure Gemini
+```
 
-Create a .env file:
+### 4. Configure Gemini
 
+Create a `.env` file:
+
+```env
 GEMINI_API_KEY=your_api_key_here
 GEMINI_MODEL=gemini-3.8-flash
+```
 
-Do not commit your .env file to GitHub.
+Do not commit your `.env` file to GitHub.
 
-5. Run the application
+### 5. Run the application
+
+```bash
 streamlit run app.py
+```
+
 ---
-📊 Retrieval Evaluation
+
+## Retrieval Evaluation
 
 Run:
 
+```bash
 python evaluate.py
+```
 
 The evaluation tests the semantic retrieval system against predefined workplace safety questions.
 
 Current project evaluation:
 
+```text
 Retrieval accuracy: 100%
 Target: 85%
+```
+
 ---
-🔐 Security
 
-Sensitive credentials are excluded using .gitignore.
+## Security
 
-The following are intentionally not committed:
+Sensitive credentials are excluded using `.gitignore`.
 
+The following files and directories are intentionally not committed:
+
+```text
 .env
 venv/
 chroma_db/
@@ -251,16 +280,24 @@ logs/
 runs/
 output/
 __pycache__/
+```
+
 ---
-🎯 Project Goal
+
+## Project Goal
 
 VisionDesk AI aims to connect visual workplace observations with organizational safety knowledge.
 
 Instead of treating computer vision, documents, and AI as separate systems, the platform combines them into one workflow:
 
+```text
 See → Retrieve → Reason → Analyze → Report
+```
+
 ---
-👩‍💻 Author
 
-Simran Singh
+## Author
 
+**Simran Singh**
+
+B.Tech Computer Science Engineering
